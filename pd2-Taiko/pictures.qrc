@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/background">
+        <file>back2.png</file>
+        <file>../color-background.jpg</file>
+        <file>../pics/circle.png</file>
+        <file>../pics/start_background.jpg</file>
+        <file>../pics/score_background.jpg</file>
+    </qresource>
+    <qresource prefix="/game">
+        <file>../pics/bg.png</file>
+        <file>../pics/mtaikoflash_red.png</file>
+        <file>../pics/reddrum.png</file>
+    </qresource>
+    <qresource prefix="/Counting">
+        <file>../pics/counting1.png</file>
+        <file>../pics/counting2.png</file>
+        <file>../pics/counting3.png</file>
+    </qresource>
+    <qresource prefix="/new background">
+        <file>../../../Pictures/homework/banner.png</file>
+        <file>../../../Pictures/homework/blue.png</file>
+        <file>../../../Pictures/homework/Game.png</file>
+        <file>../../../Pictures/homework/Game2.png</file>
+        <file>../../../Pictures/homework/red.png</file>
+        <file>../pics/mtaikoflash_blue.png</file>
+    </qresource>
+    <qresource prefix="/music">
+        <file>../../../Music/homework_music/Detective Conan Opening 6 (FANMADE)-zHw-Sn6eQgY.mp3</file>
+    </qresource>
+</RCC>
