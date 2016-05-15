@@ -11,6 +11,7 @@
 #include <QImage>
 #include <QGraphicsView>
 #include <QMediaPlayer>
+#include <QTime>
 
 
 #include "bigdrumred.h"
@@ -20,10 +21,12 @@
 #include "tt.h"
 
 #include "score_window.h"
+#include "last_num.h"
 class Game
 {
 public:
     Game();
+    void delay(int);
     void stop();
     void Play();
 
@@ -41,7 +44,6 @@ private:
     QGraphicsView * view ;
     QGraphicsView * Sview;
 
-    int last_num;
     int num;
 };
 

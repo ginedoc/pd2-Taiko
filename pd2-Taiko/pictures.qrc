@@ -26,5 +26,7 @@
     </qresource>
     <qresource prefix="/music">
         <file>../../../Music/homework_music/Detective Conan Opening 6 (FANMADE)-zHw-Sn6eQgY.mp3</file>
+        <file>../pics/bluedrum.wav</file>
+        <file>../pics/reddrum.wav</file>
     </qresource>
 </RCC>

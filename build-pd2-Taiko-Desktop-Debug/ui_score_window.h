@@ -27,7 +27,7 @@ class Ui_Score_window
 public:
     QPushButton *restart;
     QPushButton *Cancel;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLabel *label_2;
@@ -49,13 +49,13 @@ public:
         Cancel->setObjectName(QStringLiteral("Cancel"));
         Cancel->setGeometry(QRect(640, 450, 121, 41));
         Cancel->setStyleSheet(QStringLiteral("background-color: rgb(255, 170, 0);"));
-        widget = new QWidget(Score_window);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(140, 130, 371, 201));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(Score_window);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(140, 130, 371, 201));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
         QFont font;
         font.setPointSize(22);
@@ -64,7 +64,7 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setFont(font);
         label_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 170, 255);"));
@@ -73,8 +73,8 @@ public:
 
 
         retranslateUi(Score_window);
-        QObject::connect(restart, SIGNAL(clicked()), Score_window, SLOT(close()));
         QObject::connect(Cancel, SIGNAL(clicked()), Score_window, SLOT(close()));
+        QObject::connect(restart, SIGNAL(clicked()), Score_window, SLOT(close()));
 
         QMetaObject::connectSlotsByName(Score_window);
     } // setupUi

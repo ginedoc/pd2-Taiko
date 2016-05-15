@@ -12,7 +12,7 @@ Score::Score(QGraphicsItem * parent):
 
 void Score::plus(int ss){
     setPlainText(QString::number(ss));
-    delay(500);
+    delay(300);
     this->hide();
 }
 

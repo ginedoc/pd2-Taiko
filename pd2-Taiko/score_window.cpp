@@ -23,3 +23,4 @@ Score_window::~Score_window()
     delete ui;
 }
 
+

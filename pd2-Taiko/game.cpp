@@ -6,7 +6,6 @@ Game::Game(){
 }
 void Game::Play()
 {
-
     scoretext *scoreT = new scoretext();
 
     //Initialize
@@ -44,29 +43,53 @@ void Game::Play()
    view->setFixedSize(800,500);
 
    //create new drum
+  srand((unsigned)time(NULL));
+  int grt;
+  int temp  = 0;
+  QTimer * timer;
 
+  while(temp < 22000){
+        timer = new QTimer();
 
-   QTimer * timer = new QTimer();
-   QObject::connect(timer , SIGNAL(timeout()) , adddrum, SLOT(generate()));
-   timer->start(800);
+        grt = rand() % 500 + 300;
+        temp = temp + grt;
 
+        QObject::connect(timer , SIGNAL(timeout()) , adddrum, SLOT(generate()));
+        timer->start(grt);
+        delay(grt);
+
+        timer->stop();
+        view->show();
+    }
    view->show();
 
-   last_num = adddrum->Dscorenumber();
 }
 
+
 void Game::stop(){
+
     AddDrum *adddrum = new AddDrum();
     Score_window * w = new Score_window();
 
+
     num = adddrum->Dscorenumber() - last_num;
+
+    last_num = adddrum->Dscorenumber();
 
     w->getNUM(num);
     w->SHOW();
     w->setModal(true);
     w->exec();
-    delete view;
 
+    delete view;
 }
 
+void Game::delay( int millisecondsToWait )
+{
+    QTime dieTime = QTime::currentTime().addMSecs( millisecondsToWait );
+    while( QTime::currentTime() < dieTime )
+    {
+        QCoreApplication::processEvents( QEventLoop::AllEvents, 100 );
+    }
+}
 

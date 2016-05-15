@@ -53,7 +53,7 @@ alternate-background-color: rgb(255, 170, 0);</string>
     <string>cancel</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -99,34 +99,34 @@ alternate-background-color: rgb(255, 170, 0);</string>
  <resources/>
  <connections>
   <connection>
-   <sender>restart</sender>
-   <signal>clicked()</signal>
-   <receiver>Score_window</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>512</x>
-     <y>466</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>68</x>
-     <y>504</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>Cancel</sender>
    <signal>clicked()</signal>
    <receiver>Score_window</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>701</x>
-     <y>468</y>
+     <x>694</x>
+     <y>469</y>
     </hint>
     <hint type="destinationlabel">
-     <x>551</x>
-     <y>510</y>
+     <x>743</x>
+     <y>530</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>restart</sender>
+   <signal>clicked()</signal>
+   <receiver>Score_window</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>535</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>442</x>
+     <y>521</y>
     </hint>
    </hints>
   </connection>

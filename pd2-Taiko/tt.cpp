@@ -4,6 +4,7 @@
 #include "reddrum.h"
 #include "QTime"
 #include <mainwindow.h>
+#include "game.h"
 
 TT::TT(QGraphicsItem * parent): QGraphicsTextItem(parent)
 {

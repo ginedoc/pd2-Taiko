@@ -210,7 +210,8 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		../pd2-Taiko/score_window.h \
 		../pd2-Taiko/tempdeclare.h \
 		../pd2-Taiko/scoretext.h \
-		../pd2-Taiko/setting.h ../pd2-Taiko/main.cpp \
+		../pd2-Taiko/setting.h \
+		../pd2-Taiko/last_num.h ../pd2-Taiko/main.cpp \
 		../pd2-Taiko/mainwindow.cpp \
 		../pd2-Taiko/about.cpp \
 		../pd2-Taiko/game.cpp \
@@ -466,7 +467,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../pd2-Taiko/pictures.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../pd2-Taiko/mainwindow.h ../pd2-Taiko/about.h ../pd2-Taiko/game.h ../pd2-Taiko/bigdrumred.h ../pd2-Taiko/bigdrumblue.h ../pd2-Taiko/tt.h ../pd2-Taiko/circle.h ../pd2-Taiko/adddrum.h ../pd2-Taiko/score.h ../pd2-Taiko/score_window.h ../pd2-Taiko/tempdeclare.h ../pd2-Taiko/scoretext.h ../pd2-Taiko/setting.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../pd2-Taiko/mainwindow.h ../pd2-Taiko/about.h ../pd2-Taiko/game.h ../pd2-Taiko/bigdrumred.h ../pd2-Taiko/bigdrumblue.h ../pd2-Taiko/tt.h ../pd2-Taiko/circle.h ../pd2-Taiko/adddrum.h ../pd2-Taiko/score.h ../pd2-Taiko/score_window.h ../pd2-Taiko/tempdeclare.h ../pd2-Taiko/scoretext.h ../pd2-Taiko/setting.h ../pd2-Taiko/last_num.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../pd2-Taiko/main.cpp ../pd2-Taiko/mainwindow.cpp ../pd2-Taiko/about.cpp ../pd2-Taiko/game.cpp ../pd2-Taiko/bigdrumred.cpp ../pd2-Taiko/bigdrumblue.cpp ../pd2-Taiko/tt.cpp ../pd2-Taiko/circle.cpp ../pd2-Taiko/adddrum.cpp ../pd2-Taiko/score.cpp ../pd2-Taiko/score_window.cpp ../pd2-Taiko/scoretext.cpp ../pd2-Taiko/setting.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../pd2-Taiko/mainwindow.ui ../pd2-Taiko/about.ui ../pd2-Taiko/score_window.ui ../pd2-Taiko/setting.ui $(DISTDIR)/
 
@@ -493,6 +494,8 @@ compiler_rcc_make_all: qrc_pictures.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_pictures.cpp
 qrc_pictures.cpp: ../pd2-Taiko/pictures.qrc \
+		../pics/reddrum.wav \
+		../pics/bluedrum.wav \
 		../pics/counting3.png \
 		../pics/counting2.png \
 		../pics/counting1.png \
@@ -567,6 +570,7 @@ moc_score_window.cpp: ../pd2-Taiko/game.h \
 		../pd2-Taiko/score.h \
 		../pd2-Taiko/tt.h \
 		../pd2-Taiko/score_window.h \
+		../pd2-Taiko/last_num.h \
 		../pd2-Taiko/score_window.h
 	/usr/lib/qt/bin/moc $(DEFINES) -I/usr/lib/qt/mkspecs/linux-g++ -I'/home/powang/ncku 2016 spring/pd2-Taiko/pd2-Taiko' -I/usr/include/qt -I/usr/include/qt/QtMultimedia -I/usr/include/qt/QtWidgets -I/usr/include/qt/QtGui -I/usr/include/qt/QtNetwork -I/usr/include/qt/QtCore -I. -I/usr/include/c++/5.3.0 -I/usr/include/c++/5.3.0/x86_64-unknown-linux-gnu -I/usr/include/c++/5.3.0/backward -I/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/include -I/usr/local/include -I/usr/lib/gcc/x86_64-unknown-linux-gnu/5.3.0/include-fixed -I/usr/include ../pd2-Taiko/score_window.h -o moc_score_window.cpp
 
@@ -620,6 +624,7 @@ mainwindow.o: ../pd2-Taiko/mainwindow.cpp ../pd2-Taiko/mainwindow.h \
 		../pd2-Taiko/score.h \
 		../pd2-Taiko/tt.h \
 		../pd2-Taiko/score_window.h \
+		../pd2-Taiko/last_num.h \
 		../pd2-Taiko/setting.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../pd2-Taiko/mainwindow.cpp
 
@@ -641,6 +646,7 @@ game.o: ../pd2-Taiko/game.cpp ../pd2-Taiko/game.h \
 		../pd2-Taiko/score.h \
 		../pd2-Taiko/tt.h \
 		../pd2-Taiko/score_window.h \
+		../pd2-Taiko/last_num.h \
 		../pd2-Taiko/scoretext.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o game.o ../pd2-Taiko/game.cpp
 
@@ -655,7 +661,18 @@ bigdrumblue.o: ../pd2-Taiko/bigdrumblue.cpp ../pd2-Taiko/bigdrumblue.h \
 tt.o: ../pd2-Taiko/tt.cpp ../pd2-Taiko/tt.h \
 		../pd2-Taiko/bigdrumred.h \
 		../pd2-Taiko/reddrum.h \
-		../pd2-Taiko/mainwindow.h
+		../pd2-Taiko/mainwindow.h \
+		../pd2-Taiko/game.h \
+		ui_mainwindow.h \
+		../pd2-Taiko/about.h \
+		../pd2-Taiko/circle.h \
+		../pd2-Taiko/adddrum.h \
+		../pd2-Taiko/bigdrumblue.h \
+		../pd2-Taiko/bluedrum.h \
+		../pd2-Taiko/tempdeclare.h \
+		../pd2-Taiko/score.h \
+		../pd2-Taiko/score_window.h \
+		../pd2-Taiko/last_num.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tt.o ../pd2-Taiko/tt.cpp
 
 circle.o: ../pd2-Taiko/circle.cpp ../pd2-Taiko/circle.h
@@ -689,6 +706,7 @@ score_window.o: ../pd2-Taiko/score_window.cpp ../pd2-Taiko/score_window.h \
 		../pd2-Taiko/tempdeclare.h \
 		../pd2-Taiko/score.h \
 		../pd2-Taiko/tt.h \
+		../pd2-Taiko/last_num.h \
 		ui_score_window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o score_window.o ../pd2-Taiko/score_window.cpp
 

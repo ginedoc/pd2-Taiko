@@ -8,6 +8,7 @@
 #include <QGraphicsScene>
 #include <stdlib.h>
 #include <QObject>
+#include <QMediaPlayer>
 
 #include "bigdrumblue.h"
 #include "bigdrumred.h"
@@ -31,6 +32,7 @@ public slots:
 private:
     int color;
     Score ss;
+    QMediaPlayer *player;
 
 };
 

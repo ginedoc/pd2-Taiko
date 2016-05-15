@@ -18,6 +18,7 @@ public:
     void SHOW();
     ~Score_window();
 
+
 private:
     int s;
     Ui::Score_window *ui;

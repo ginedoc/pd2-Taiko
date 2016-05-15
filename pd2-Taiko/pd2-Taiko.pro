@@ -40,7 +40,8 @@ HEADERS  += mainwindow.h \
     score_window.h \
     tempdeclare.h \
     scoretext.h \
-    setting.h
+    setting.h \
+    last_num.h
 
 FORMS    += mainwindow.ui \
     about.ui \

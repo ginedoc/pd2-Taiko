@@ -35,7 +35,7 @@ void MainWindow::on_pushButton_1_clicked()
 {
     Game * game = new Game();
     game->Play();
-    delay(30000);
+    delay(7000);
     game->stop();
 }
 
